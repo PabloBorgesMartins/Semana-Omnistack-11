@@ -1,0 +1,77 @@
+----------BACKEND--------------
+npm init -y				cria o package.json e aceita todas as opcoes
+npm install express			microframework 
+CRIA-SE O INDEX.JS
+npm install nodemon -D
+troca script test por start e coloca o arquivo raiz, "nodemon index.js"
+Instala um query builder, para usar javascript para manipular o banco ( ferramenta utilizada: knex )
+npm install knex		
+npm install sqlite3			Banco de dados utilizado	
+npx knex init				Cria arquivo de configuracao de acesso ao banco de dados
+ALTERA O ARQUIVO KNEXFILE ALTERANDO DIRETÓRIO DE ONDE O ARQUIVO FICARÁ E QUAL O SEU NOME: './src/database/db.sqlite'
+PENSAR NAS ENTIDADES E FUNCIONALIDADES QUE A APLICACAO TERÁ
+--Entidades: ong e casos
+--Funcionalidades: Login da ong, Logout da ong, Cadastro da ong, Criar caso, deletar caso, listar todos casos, listar caso específico, entrar em contato com a ong
+CRIA-SE PASTA MIGRATION DENTRO DE DATA BASE
+CONFIGURA DENTRO DE KNEXFILE AS MIGRATIONS, COLOCANDO O DIRETÓRIO DE ONDE A PASTA FICA, LEMBRAR-SE DE USAR (useNullAsDefault:true) POIS POR PADRAO O SQLITE NAO SUPORTA A INSERÇAO DE DEFAULT VALUES
+npx knex migrate:make create_ongs	Cria a migration, que cria ongs
+npx knex migrate:latest 		Executa a migration, consequentemente gerando as tabelas no banco
+npx knex migrate:status			Lista todas migrations realizadas
+const crypto = require('crypto)		Pacote do node de criptografia que tem método q consegue gerar texto aleatório
+CRIA ARQUIVO CONNECTIONS E O CONFIGURA PARA SE CONECTAR AO BANCO DE DADOS
+npm install cors
+COLOCAR NO INDEX O app.use(cors())	Determina quem pode acessar nossa aplicacao, sem nenhum parametro, todas nosas aplicacoes podem acessar esse backend
+npm install celebrate			Utilizado para fazer validaçoes
+npm install jest -D			(-D para ser instalado apenas durante desenvolvimento) Utilizado para fazer testes na aplicacao
+npx jest --init
+npm install cross-env
+npm install supertest -D		Utilizado para fazer requisicoes HTTP durante teste, faz chamadas api para o backend
+
+
+
+
+----------REACT-------
+npx create-react-app NOME
+DELETE readme, index.css, app.css, app.test.js, logo.svg, serviceWorker, setupTest
+const [nome, setNome] = useState(tipoDoState);
+Utilizar google fonts pra fonts especiais
+ctrl + shift + p -> preferences:open settings(JSON) adicionar essas importacoes para facilitar digitacao:
+	"emmet.syntaxProfiles": {"javascript": "jsx"},
+    	"emmet.includeLanguages": {"javascript": "javascriptreact"},
+
+npm install react-icons	-> import 'react-icons/fi'
+npm install react-router-dom	rotas
+npm install axios		cliente http responsavel por fazer chamadas api
+CRIA-SE O api.js PARA PODER USAR O CLIENT HTTP
+e.preventDeafault();		Previne que a pagina inteira recarregue, ao se clicar em um botao de submit
+useEffect() 			Utilizado para disparar uma funcao em um determinado momento do component
+
+Component -> uma funçao que retorna HTML
+JSX -> (JavaScript XML) é o HTML escrito dentro de um arquivo java script
+
+
+
+
+----------REACT-NATIVE-------
+	
+expo install expo-mail-composer			instalar integraçao com email
+import { Feather } from '@expo/vector-icons';	icones para aplicativos
+import Constants from 'expo-constants';		utilizado para conseguir dimensoes de um aparelho
+npm install intl				utilizado para formatar valores monetarios
+
+
+
+
+-----------EXTRA------------
+
+TDD-> test driven development
+heroku, digitalOcean -> Hospedagem de backend
+netlify -> Hospedar FrontEnd
+
+
+
+
+---------ESTUDOS DAQUI PRA FRENTE-------------
+Padroes de código -> ESLink, Prettier
+Autenticaçao JWT
+Styled Components
